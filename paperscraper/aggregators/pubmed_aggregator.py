@@ -30,7 +30,7 @@ class PubMedAggregator:
         if isinstance(pubmed_id, int):
             pubmed_id = str(pubmed_id)
         driver = self.driver
-        driver.get("https://www.ncbi.nlm.nih.gov/pubmed/%s" % pubmed_id)
+        driver.get("https://pubmed.ncbi.nlm.nih.gov/%s" % pubmed_id)
         soup = BeautifulSoup(driver.page_source, 'html.parser')
 
         if soup.find("div", {"class": "icons portlet"}) is None:
